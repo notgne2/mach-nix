@@ -131,9 +131,11 @@ def parse_reqs_line(line):
     if len(split) > 1:
         init, marker = split
         init = init.replace("'", "").replace('"', '')
+        init = init.replace(" ", "")
         line = init + ';' + marker
     else:
         line = line.replace("'", "").replace('"', '')
+        line = line.replace(" ", "")
     
     if line.endswith(','):
         line = line[:-1]
